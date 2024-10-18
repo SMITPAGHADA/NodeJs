@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+    <div class=" main">
+        <form action="/insert" method="post">
+            <h1 class="a">ADD Your Book </h1>
+            <!-- <input type ="text" hidden placeholder="enter id" name="id"> -->
+            <input  type="text" placeholder="Enter author name" name="name">
+            <input  type="text" placeholder="Enter book name" name="bookname">
+            <input  type="text" placeholder="Enter book price" name="price">
+            <input  type="text" placeholder="Enter book rating" name="rate">
+            <button type="submit" class="btn">Add Book</button>
+        </form>
+    </div>
+   <div class="second">
+
+    <table border="" width="50%">
+        <thead>
+            <!-- <th>id</th> -->
+            <th>Author name</th>
+            <th>Book name</th>
+            <th>Price</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <%data.map((e,i)=>{ %>
+            <tr>
+                <!-- <td><%=e.id %></td> -->
+                <td><%=e.name %></td>
+                <td><%=e.bookname %></td>
+                <td><%=e.price %></td>
+                <td>
+                    <a href="/edit?id=<%=e.id%>"><button class="q2">Edit</button></a>
+                    <a href="/delete?id=<%=e.id%>"> <button class="q3">delete</button></a>
+                </td>
+            </tr>
+        <%    })%>
+        </tbody>
+    </table>
+   </div>
+  
+</body>
+</html>
