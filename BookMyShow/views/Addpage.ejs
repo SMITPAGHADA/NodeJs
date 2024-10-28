@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="../public/apage.css">
+</head>
+
+<body>
+    
+
+    <!-- <form action="/insert" method="post" enctype="multipart/form-data">
+       <input type="text" placeholder="enter moive " name="name"> 
+       <input type="text" placeholder="enter title" name="title"> 
+       <input type="file" name="image" >
+       <button type="submit">addmovie</button>
+    </form> -->
+
+    <div class="form-container">
+        <h1>Add a New Movie</h1>
+        <form action="/insert" method="post" enctype="multipart/form-data">
+            <label for="image" class="file-label">
+                <input type="file" name="image" id="image" required>
+                <span>Upload Movie Poster</span>
+            </label>
+            <input type="text" placeholder="Movie Name" name="name" required>
+            <input type="text" placeholder="Title" name="title" required>
+            <button type="submit">Add Movie</button>
+        </form>
+    </div>
+</body>
+</html>

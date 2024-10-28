@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>smit</h1>
+  <form action="/insert" enctype="multipart/form-data" method="post">
+    <input type="text" placeholder="enter youre name" name="name">
+    <input type="text" placeholder="enter youre sub" name="sub">
+    <label>man</label>
+    <input type="radio" name="gender" value="man" >
+    <label>woman</label>
+    <input type="radio" name="gender" value="woman" >
+    <br>
+    <label>game</label>
+    <input type="checkbox" name="hobby" value="game">
+    <label>singing</label>
+    <input type="checkbox" name="hobby" value="singing">
+    <label>traveling</label>
+    <input type="checkbox" name="hobby" value="traveling">
+    <select name="city">city name
+      <option value="rajkot" >rajkot</option>
+      <option value="jamnagr">jamnagr</option>
+      <option value="abu">abu</option>
+      <option value="surat">surat</option>
+    </select>
+    <input type="file" name="image">
+    <button type="submit">Add</button>
+
+  </form>
+  <table  border="1"> 
+    <thead>
+        <th>name</th>
+        <th>sub</th>
+        <th>gender</th>
+        <th>hobby</th>
+        <th>city</th>
+        <th>image</th>
+        <th>action</th>
+    </thead>
+    <tbody>
+        <% data.map((e,i)=>{ %>
+                     <tr>
+                        <td><%=e.name%></td>
+                        <td><%=e.sub%></td>
+                        <td><%=e.gender%></td>
+                        <td><%=e.hobby%></td>
+                        <td><%=e.city%></td>
+                        <td> <img src="<%=e.image%>" alt="" width="20%"></td>
+                        
+                        <td>
+                            <a href="/edit?id=<%=e.id%>"><button>Edit</button></a>
+                            <a href="/delete?id=<%=e.id%>"><button>Delete</button></a>
+                        </td>
+                     </tr> 
+       <% })%>
+    </tbody>
+  </table>
+</body>
+</html>

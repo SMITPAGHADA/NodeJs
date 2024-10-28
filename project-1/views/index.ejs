@@ -8,13 +8,14 @@
 </head>
 <body>
     <div class=" main">
-        <form action="/insert" method="post">
+        <form action="/insert" method="post" enctype="multipart/form-data">
             <h1 class="a">ADD Your Book </h1>
             <!-- <input type ="text" hidden placeholder="enter id" name="id"> -->
             <input  type="text" placeholder="Enter author name" name="name">
             <input  type="text" placeholder="Enter book name" name="bookname">
             <input  type="text" placeholder="Enter book price" name="price">
             <input  type="text" placeholder="Enter book rating" name="rate">
+            <input type="file" name="image" >
             <button type="submit" class="btn">Add Book</button>
         </form>
     </div>
@@ -26,6 +27,9 @@
             <th>Author name</th>
             <th>Book name</th>
             <th>Price</th>
+            <th>Rating</th>
+
+            <th>image</th>
             <th>Action</th>
         </thead>
         <tbody>
@@ -34,7 +38,10 @@
                 <!-- <td><%=e.id %></td> -->
                 <td><%=e.name %></td>
                 <td><%=e.bookname %></td>
+                
                 <td><%=e.price %></td>
+                <td><%=e.rate %></td>
+                <td><img src="<%=e.image%>" alt=""></td>
                 <td>
                     <a href="/edit?id=<%=e.id%>"><button class="q2">Edit</button></a>
                     <a href="/delete?id=<%=e.id%>"> <button class="q3">delete</button></a>

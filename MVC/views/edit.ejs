@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>smit</h1>
+  <form action="/update" method="post" enctype="multipart/form-data">
+    <input type="edit"  value="<%=Edata.id%>"   name="id" hidden>
+    <input type="text" placeholder="enter youre name" name="name" value="<%=Edata.name%>">
+    <input type="text" placeholder="enter youre sub" name="sub" value="<%=Edata.sub%>">
+    <label>man</label>
+    <input type="radio" name="gender" value="man"  <%=Edata.gender === "man" ? "checked":"" %>>
+    <label>woman</label>
+    <input type="radio" name="gender" value="woman" <%=Edata.gender === "woman" ? "checked":"" %> >
+    <br>
+    <label>game</label>
+    <input type="checkbox" name="hobby" value="game" <%=Edata.hobby.includes("game") ? "checked" :""%>>
+    <label>singing</label>
+    <input type="checkbox" name="hobby" value="singing"  <%=Edata.hobby.includes("singing") ? "checked" : ""%>>
+    <label>traveling</label>
+    <input type="checkbox" name="hobby" value="traveling" <%=Edata.hobby.includes("traveling") ? "checked" : ""%>>
+    <select name="city">city name
+      <option value="rajkot"   <%=Edata.city ===  "rajkot" ? "selected" : ""%>>rajkot</option>
+      <option value="jamnagr" <%=Edata.city ===  "jamnagr" ? "selected" : ""%> >jamnagr</option>
+      <option value="abu" <%=Edata.city ===  "abu" ? "selected" : ""%>>abu</option>
+      <option value="surat" <%=Edata.city ===  "surat" ? "selected" : ""%>>surat</option>
+    </select>
+    <input type="file" name="image">
+    <button type="submit">update</button>
+
+  </form>
+
+</body>
+</html>

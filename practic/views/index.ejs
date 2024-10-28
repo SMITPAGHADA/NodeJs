@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>smit</h1>
+    <form action="/insert" method="post" enctype="multipart/form-data">
+        <input type="text" placeholder="name" name="name">
+        <input type="text" placeholder="sub" name="sub" >
+        <input type="file" name="image">
+        <button type="submit">submit</button>
+    </form>
+
+    <table border="1" width="30%"> 
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Sub</th>
+                <th>image</th>
+                <th>action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.map((e,i)=>{ %>
+                   <tr>
+                    <td><%=e.name %></td>
+                    <td><%=e.sub %></td>
+                    <td><img src="<%=e.image%>" width="40%" alt=""></td>
+                    <td> 
+                        <a href="/delete?id=<%=e.id%>"><button>Delete</button></a>
+                        <a href="/edit?id=<%=e.id%>"><button>Edit</button></a>
+                    </td>
+                   </tr>
+        <%    }) %>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/style.css">
+</head>
+<body>
+ 
+
+ <nav class="navbar">
+    <div class="navbar-container">
+      <div class="logo">
+        <a href="/">
+          <img src="../public/image/pngegg.png" alt="Logo" />
+        </a>
+      </div>
+      <div class="search-bar">
+        <input
+          type="text"
+          placeholder="Search for movies, events, plays, sports..."
+        />
+      </div>
+      <div class="nav-actions">
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/movies">Movies</a></li>
+          <li><a href="/events">Events</a></li>
+          <li><a href="/plays">Plays</a></li>
+          <li><a href="/sports">Sports</a></li>
+          <li><a href="/offers">Offers</a></li>
+          <li><a href="/rewards">Rewards</a></li>
+        </ul>
+        <a href="/Addpage">
+          <button class="add-movies-btn">Add Movies</button>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!--  -->
+  <div class="slider">
+    <div class="slides">
+      <div class="slide">
+        <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1728981975592_humareramwebshowcase1240x300.jpg" alt="Poster 1" />
+      </div>
+      <div class="slide">
+        <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1726036566435_playcardnewweb.jpg" alt="Poster 2" />
+      </div>
+      <div class="slide">
+        <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1729774521118_indiatourforweb1.jpg" alt="Poster 3" />
+      </div>
+    </div>
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+  </div>
+
+  <h1 class="moviehead">Recomanded Movies</h1>
+  <div class="content">
+    <div class="movieBox">
+      <%data.map((e)=>{%>
+      <div>
+        <div class="post">
+          <img src="<%=e.image%>" width="20%" alt="" />
+        </div>
+        <h1 class="movieName"><%=e.name%></h1>
+        <h1 class="movieTitle"><%=e.title%></h1>
+        <a href="/edit?id=<%=e.id%>"><button>Edit</button></a>
+        <a href="/delete?id=<%=e.id%>"><button>Delete</button></a>
+      </div>
+      <% })%>
+    </div>
+  </div>
+
+ <!-- <div>
+    <%  data.map((e,i)=>{ %>
+               <h1  class="text-3xl font-bold underline text-clifford"><%=e.name%></h1>
+               <h1><%=e.title%></h1>
+               <img src="<%=e.image%>" alt="">
+               <a href="/edit?id=<%=e.id%>"><button>Edit</button></a>
+               <a href="/delete?id=<%=e.id%>"><button>Delete</button></a>
+  <%  })%>
+ </div> -->
+ 
+ 
+ 
+ <script src="../public/slider.js"></script>
+</body>
+</html>
