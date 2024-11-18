@@ -29,7 +29,6 @@ module.exports.EditData =("/edit",  async (req, res) => {
 module.exports.updateData = ("/update",async (req, res) => {
     
     
-        
     let updata = await admin.findByIdAndUpdate(req.body.id, req.body);
     updata && res.redirect("/");
   });
