@@ -22,11 +22,12 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
-
+app.use(passport.AuthenticatedUser)
 
 app.use("/", require("./routes/route"))
+app.use("/category", require("./routes/catroute"))
 app.use(express.static(path.join(__dirname,"public")))
-app.use("/upload",express.static(path.join(__dirname,"upload")));
+app.use("/public/upload/",express.static(path.join(__dirname,"public/upload")));
 app.listen(port,(err)=>{
     err ? console.log(err) : console.log("server start on " + port)
 })
